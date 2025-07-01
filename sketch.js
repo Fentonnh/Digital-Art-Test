@@ -13,9 +13,15 @@ function setup() {
 function draw() {
   theShader.setUniform("resolution", [width, height]);
   theShader.setUniform("time", millis() / 1000.0);
-  rect(-width / 2, -height / 2, width, height);
-}
 
+  // Manually draw a full-screen quad using clip space coordinates
+  beginShape();
+  vertex(-1, -1, 0);  // bottom left
+  vertex(1, -1, 0);   // bottom right
+  vertex(1, 1, 0);    // top right
+  vertex(-1, 1, 0);   // top left
+  endShape(CLOSE);
+}
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
