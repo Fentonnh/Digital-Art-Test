@@ -8,18 +8,15 @@ function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   noStroke();
   shader(theShader);
+  rectMode(CENTER); // Important!
 }
 
 function draw() {
   theShader.setUniform("resolution", [width, height]);
   theShader.setUniform("time", millis() / 1000.0);
 
-  beginShape();
-  vertex(-1, -1, 0);
-  vertex(1, -1, 0);
-  vertex(1, 1, 0);
-  vertex(-1, 1, 0);
-  endShape(CLOSE);
+  // Fullscreen rectangle (centered in WebGL)
+  rect(0, 0, width, height);
 }
 
 function windowResized() {
