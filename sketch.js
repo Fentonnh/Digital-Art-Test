@@ -1,9 +1,15 @@
 let zoff = 0;
+let speedSlider;
+let speed = 0.01;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   pixelDensity(1);
   noSmooth();
+  const container = select('#speed-container');
+  speedSlider = createSlider(0.001, 0.1, speed, 0.001);
+  speedSlider.parent(container);
+  speedSlider.style('width', '200px');
 }
 
 function draw() {
@@ -21,4 +27,5 @@ function draw() {
   }
   updatePixels();
   zoff += 0.01;
+  zoff += speedSlider.value();
 }
