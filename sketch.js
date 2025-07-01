@@ -14,5 +14,7 @@ function setup() {
 function draw() {
   theShader.setUniform("resolution", [width, height]);
   theShader.setUniform("time", millis() / 1000.0);
-  rect(0, 0, width, height);
+
+  // Draw a full canvas rectangle (centered in WebGL mode)
+  rect(-width / 2, -height / 2, width, height);
 }
