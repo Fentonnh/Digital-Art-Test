@@ -2,6 +2,7 @@ let theShader;
 
 function preload() {
   theShader = loadShader('shader.vert', 'shader.frag');
+  console.log('Shader loaded:', theShader);
 }
 
 function setup() {
