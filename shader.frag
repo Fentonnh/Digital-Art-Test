@@ -8,6 +8,6 @@ out vec4 fragColor;
 
 void main() {
   vec2 uv = gl_FragCoord.xy / resolution;
-  vec3 col = vec3(uv.x, uv.y, abs(sin(time)));
-  fragColor = vec4(col, 1.0);
+  vec3 color = vec3(uv.x, uv.y, abs(sin(time)));
+  fragColor = vec4(color, 1.0);
 }
