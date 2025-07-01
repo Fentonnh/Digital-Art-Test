@@ -15,7 +15,7 @@ function draw() {
   theShader.setUniform("time", millis() / 1000.0);
 
   // This will map the shader across a full-screen quad in WebGL space
-  plane(width/2, height/2);
+  plane(width/.5, height/.5);
 }
 
 function windowResized() {
