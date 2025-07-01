@@ -8,6 +8,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   noStroke();
   shader(theShader);
+  console.log("Loaded shader:", theShader);
 }
 
 function draw() {
