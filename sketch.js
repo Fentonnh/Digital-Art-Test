@@ -16,5 +16,8 @@ function draw() {
   theShader.setUniform("time", millis() / 1000.0);
 
   // Draw a full canvas rectangle (centered in WebGL mode)
-  rect(-width / 2, -height / 2, width, height);
+  rect(-windowWidth / 2, -windowHeight / 2, windowWidth, windowHeight);
+}
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
