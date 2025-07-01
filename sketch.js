@@ -1,3 +1,5 @@
+console.log("p5 loaded");
+
 let theShader;
 
 function preload() {
