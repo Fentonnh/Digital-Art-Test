@@ -1,11 +1,11 @@
-#ifdef GL_ES
+#version 300 es
 precision mediump float;
-#endif
 
 uniform vec2 resolution;
 uniform float time;
 
-// 4x4 Bayer matrix (ordered dithering)
+out vec4 fragColor;
+
 float dither4x4(vec2 pos, float gray) {
   int x = int(mod(pos.x, 4.0));
   int y = int(mod(pos.y, 4.0));
@@ -28,5 +28,5 @@ void main() {
   float brightness = 0.5 + 0.5 * sin(pattern * 3.0 + time * 0.5);
 
   float dithered = dither4x4(gl_FragCoord.xy, brightness);
-  gl_FragColor = vec4(vec3(dithered), 1.0);
+  fragColor = vec4(vec3(dithered), 1.0);
 }
